@@ -1,4 +1,5 @@
-# Final script for LIF659M
+# Script for clustering clinical data from cBioPortal, analyzing expression differences, 
+# performing gene set enrichment analysis and measuring survival differences. 
 #--------------------------------------------------------#
 # Sigurdur Karvelsson, MARCH 2019
 
@@ -21,6 +22,10 @@ BiocManager::install("org.Hs.eg.db", version = "3.8")
 BiocManager::install("topGO", version = "3.8")
 BiocManager::install("DOSE", version = "3.8")
 BiocManager::install("ReactomePA", version = "3.8")
+# install the 'siggitRausti' package from devtools:
+install.pacakges('devtools')
+library(devtools)
+install_github('siggitrausti/siggitRausti')
 
 # Load packages:
 library(dendextend)
@@ -45,16 +50,12 @@ library(igraph)
 k_used = 4
 patients = 'all' # as opposed to 'TNBC'
 clustering_method = 'hierarchical' # as opposed to 'k_means'
-genes = 'top_variance' # as opposed to 'top_variance'
+genes = 'top_variance' # as opposed to 'all'
 save_images = TRUE
 # wd = folder with data, wd2 = folder for exporting figures
-wd <- "C:/Users/sigur/Dropbox/R_Dropbox"
-wd2 <- "C:/Users/sigur/Dropbox/R_Dropbox/OUTPUT_FOLDER"
+wd <- "."
+wd2 <- "./OUTPUT_FOLDER"
 setwd(wd)
-source("./STKfunctions/loadAll.r")
-loadAll()
-source("./FJfunctions/loadAll.r")
-loadAll()
 set.seed(222)
 # Color palette used throughout:
 col4 <- ColBrew('JCO',k_used)
