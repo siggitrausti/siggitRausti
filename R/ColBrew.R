@@ -6,7 +6,7 @@
 #' @export
 #' @examples
 #' ColBrew()
-#'
+
 ColBrew <- function(type, ncolors){
 
   outp = NULL;

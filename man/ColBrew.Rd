@@ -11,6 +11,5 @@ This function allows you to generate a color palette for images
 }
 \examples{
 ColBrew()
-
 }
 \keyword{colors}
