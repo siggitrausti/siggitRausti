@@ -2,8 +2,8 @@ Package: siggitRausti
 Title: Some newb functions to analyze TCGA data. 
 Version: 0.1.0
 Authors@R: c(
-person("Sigurdur", "Karvelsson", email = "stk13@hi.is", role = "aut"),
-person("Freyr", "Johannsson", email = "frj8@hi.is", role = "aut"))
+  person("Sigurdur", "Karvelsson", email = "stk13@hi.is", role = c("aut", "cre")),
+  person("Freyr", "Johannsson", email = "frj8@hi.is", role = "aut"))
 Description: This package is useful for analyzing RNAseq data from the TCGA.
 Depends: R (>= 3.5.1)
 License: MIT
