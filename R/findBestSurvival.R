@@ -26,6 +26,7 @@ findBestSurvival <- function(dataset,genelist,quantile_list,cor_data,print_plot=
   q_vector <- quantile_list
   cor_data2 <- cor_data
   for (i in 1:length(q_vector)){
+    print(q_vector[i])
     patients_assignment_vector <- prepareSurvivalDataTCGA(dataset,genelist,q_vector[i],0.75)
     print(length(patients_assignment_vector))
     #print(length(which(patients_assignment_vector == 1)))
