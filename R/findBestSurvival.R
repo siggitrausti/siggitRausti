@@ -27,6 +27,7 @@ findBestSurvival <- function(dataset,genelist,quantile_list,cor_data,print_plot=
   cor_data2 <- cor_data
   for (i in 1:length(q_vector)){
     patients_assignment_vector <- prepareSurvivalDataTCGA(dataset,genelist,q_vector[i],0.75)
+    print(length(patients_assignment_vector))
     #print(length(which(patients_assignment_vector == 1)))
     cor_data4 <- cbind(cor_data2,as.factor(patients_assignment_vector[1:length(patients_assignment_vector)])) # changed 22.04.19
     colnames(cor_data4)[ncol(cor_data4)] <- c('Cl3_high_low')
