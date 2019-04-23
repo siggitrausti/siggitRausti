@@ -16,6 +16,9 @@ prepareSurvivalDataTCGA <- function(dataset,genes,quantile_used,percentage_patie
     colnames(genes) = 'Group1'
     id_used_3 <- which(rownames(dataset) %in% genes$Group1)
   }
+  if (colnames(dataset)[1] == 'Hugo_Symbol'){
+    dataset <- dataset[,3:ncol(dataset)]
+  }
   survival_cl3_data <- dataset[id_used_3,]
   #CL3_z <- standardizeTCGA(survival_cl3_data)
   Cl3_z <- survival_cl3_data # 22.04.19 - this also changed...

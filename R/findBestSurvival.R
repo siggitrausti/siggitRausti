@@ -29,21 +29,16 @@ findBestSurvival <- function(dataset,genelist,quantile_list,cor_data,print_plot=
     print(q_vector[i])
     patients_assignment_vector <- prepareSurvivalDataTCGA(dataset,genelist,q_vector[i],0.75)
     print(length(patients_assignment_vector))
-    #print(length(which(patients_assignment_vector == 1)))
-    cor_data4 <- cbind(cor_data2,as.factor(patients_assignment_vector[1:length(patients_assignment_vector)])) # changed 22.04.19
+    cor_data4 <- cbind(cor_data2,as.factor(patients_assignment_vector)) # changed 22.04.19
     colnames(cor_data4)[ncol(cor_data4)] <- c('Cl3_high_low')
     res.cox2 <- coxph(Surv(survival, status) ~ Cl3_high_low, data = cor_data4)
     sum_coxph <- summary(res.cox2)
     pval_to_test <- sum_coxph$sctest[3]
-    #fit2 <- survfit(Surv(survival, status) ~ Cl3_high_low, data = cor_data4)
-    #pval_to_test <- surv_pvalue(fit2)$pval
     print(pval_to_test)
     if (pval_to_test < p_comp){
       p_comp <- pval_to_test
       lowest_quantile <- q_vector[i]
-      #fit_chosen <- fit2
       cor_data_chosen <- cor_data4
-      #rm(fit2)
     } else if (pval_to_test >= p_comp) {
       p_comp <- p_comp
       lowest_quantile <- lowest_quantile
