@@ -23,11 +23,10 @@ findBestSurvival <- function(dataset,genelist,quantile_list,cor_data,print_plot=
   }
   p_comp = Inf # start with the highest...
   lowest_quantile = NULL # Start with the lowest quantile
-  q_vector <- quantile_list
+  #q_vector <- quantile_list
   cor_data2 <- cor_data
   for (i in 1:length(q_vector)){
     patients_assignment_vector <- prepareSurvivalDataTCGA(dataset,genelist,q_vector[i],0.75)
-    print('Patient assignment successful!')
     cor_data4 <- cbind(cor_data2,as.factor(patients_assignment_vector))
     colnames(cor_data4)[ncol(cor_data4)] <- c('Cl3_high_low')
     res.cox2 <- coxph(Surv(survival, status) ~ Cl3_high_low, data = cor_data4)
@@ -43,13 +42,11 @@ findBestSurvival <- function(dataset,genelist,quantile_list,cor_data,print_plot=
       lowest_quantile <- lowest_quantile
       cor_data_chosen <- cor_data_chosen
       lowest_quantile <- lowest_quantile
-      #fit_chosen <- fit_chosen
     }
   }
   # Now output the correct graph:
   print(lowest_quantile)
   patients_assignment_vector <- prepareSurvivalDataTCGA(dataset,genelist,lowest_quantile,0.75)
-  print(length(patients_assignment_vector))
   cor_data_chosen <- cbind(cor_data2,as.factor(patients_assignment_vector))
   colnames(cor_data_chosen)[ncol(cor_data_chosen)] <- c('Cl3_high_low')
   res.cox_cand <- coxph(Surv(survival, status) ~ Cl3_high_low, data = cor_data_chosen)

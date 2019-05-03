@@ -30,10 +30,10 @@ prepareSurvivalDataTCGA <- function(dataset,genes,quantile_used,percentage_patie
     patients_assignment_vector <- rep(0,ncol(CL3_z))
     q_vals <- rep(0,nrow(CL3_z))
     for (j in 1:nrow(CL3_z)){
-      q_vals[j] <- quantile(as.numeric(CL3_z[j,1:ncol(CL3_z)]),quantile_used)
+      q_vals[j] <- quantile(as.numeric(CL3_z[j,1:ncol(CL3_z)]),quantile_used,na.rm=T)
     }
     
-    for (i in 1:ncol(CL3_z)){ # 22.04.19 - this also...
+    for (i in 1:ncol(CL3_z)){
       q_comp = rep(0,nrow(CL3_z))
       for (j in 1:nrow(CL3_z)){
         q_comp[j] <- CL3_z[j,i] > q_vals[j]
