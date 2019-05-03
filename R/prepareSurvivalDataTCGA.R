@@ -18,8 +18,10 @@ prepareSurvivalDataTCGA <- function(dataset,genes,quantile_used,percentage_patie
   }
   if (colnames(dataset)[1] == 'Hugo_Symbol'){
     dataset <- dataset[,3:ncol(dataset)]
+  } else {
+    dataset <- dataset
   }
-  CL3_z <- standardize(data.frame(assay(vsd)))
+  CL3_z <- standardize(dataset)
   patients_assignment_vector <- rep(0,ncol(CL3_z))
   q_vals <- rep(0,nrow(CL3_z))
   for (j in 1:nrow(CL3_z)){
