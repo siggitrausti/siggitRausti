@@ -19,14 +19,13 @@ prepareSurvivalDataTCGA <- function(dataset,genes,quantile_used,percentage_patie
   if (colnames(dataset)[1] == 'Hugo_Symbol'){
     dataset <- dataset[,3:ncol(dataset)]
   }
-  survival_cl3_data <- dataset[id_used_3,]
-  #CL3_z <- standardizeTCGA(survival_cl3_data)
-  Cl3_z <- survival_cl3_data # 22.04.19 - this also changed...
+  CL3_z <- standardize(data.frame(assay(vsd)))
   patients_assignment_vector <- rep(0,ncol(CL3_z))
   q_vals <- rep(0,nrow(CL3_z))
   for (j in 1:nrow(CL3_z)){
     q_vals[j] <- quantile(as.numeric(CL3_z[j,1:ncol(CL3_z)]),quantile_used) # 22.04.19 - Changed to 1:ncol(..)
   }
+  
   for (i in 1:ncol(CL3_z)){ # 22.04.19 - this also...
     q_comp = rep(0,nrow(CL3_z))
     for (j in 1:nrow(CL3_z)){
