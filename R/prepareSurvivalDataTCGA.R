@@ -18,7 +18,7 @@ prepareSurvivalDataTCGA <- function(dataset,genes,quantile_used,percentage_patie
   }
   if (length(id_used_3) == 0){
     patients_assignment_vector <- rep(1,ncol(dataset))
-    print(paste0("Gene(s) not found: ", genes))
+    print(paste0("Gene(s) not found: ", genes$Group1))
     return(patients_assignment_vector)
   } else {
     if (colnames(dataset)[1] == 'Hugo_Symbol'){
@@ -30,7 +30,7 @@ prepareSurvivalDataTCGA <- function(dataset,genes,quantile_used,percentage_patie
     patients_assignment_vector <- rep(0,ncol(CL3_z))
     q_vals <- rep(0,nrow(CL3_z))
     for (j in 1:nrow(CL3_z)){
-      q_vals[j] <- quantile(as.numeric(CL3_z[j,1:ncol(CL3_z)]),quantile_used) # 22.04.19 - Changed to 1:ncol(..)
+      q_vals[j] <- quantile(as.numeric(CL3_z[j,1:ncol(CL3_z)]),quantile_used)
     }
     
     for (i in 1:ncol(CL3_z)){ # 22.04.19 - this also...
