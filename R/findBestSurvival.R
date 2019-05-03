@@ -49,7 +49,7 @@ findBestSurvival <- function(dataset,genelist,quantile_list,cor_data,print_plot=
   print(lowest_quantile)
   patients_assignment_vector <- prepareSurvivalDataTCGA(dataset,genelist,lowest_quantile,0.75)
   print(length(patients_assignment_vector))
-  cor_data_chosen <- cbind(cor_data2,as.factor(patients_assignment_vector[3:length(patients_assignment_vector)]))
+  cor_data_chosen <- cbind(cor_data2,as.factor(patients_assignment_vector))
   colnames(cor_data_chosen)[ncol(cor_data_chosen)] <- c('Cl3_high_low')
   res.cox_cand <- coxph(Surv(survival, status) ~ Cl3_high_low, data = cor_data_chosen)
   type_of_effect <- sign(res.cox_cand$coefficients)
