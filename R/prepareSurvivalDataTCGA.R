@@ -26,7 +26,8 @@ prepareSurvivalDataTCGA <- function(dataset,genes,quantile_used,percentage_patie
     } else {
       dataset <- dataset
     }
-    CL3_z <- standardize(dataset)
+    dataset2 <- dataset[id_used_3,] # ADDED 030519. THIS IS THE REASON FOR TAKING TOO LONG. 
+    CL3_z <- standardize(dataset2)
     patients_assignment_vector <- rep(0,ncol(CL3_z))
     q_vals <- rep(0,nrow(CL3_z))
     for (j in 1:nrow(CL3_z)){
