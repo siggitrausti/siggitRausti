@@ -11,8 +11,8 @@ standardize <- function(data_frame){
   if (any(sd_vals == 0)){
     id_remove <- which(sd_vals == 0)
     data_frame <- data_frame[-c(id_remove),]
-    mean_vals <- mean_vals[-c(id_remove),]
-    sd_vals <- sd_vals[-c(id_remove),]
+    mean_vals <- mean_vals[-c(id_remove)]
+    sd_vals <- sd_vals[-c(id_remove)]
   }
   data_frame2 <- data_frame
   for (i in 1:nrow(data_frame)){
