@@ -17,7 +17,7 @@ prepareSurvivalDataTCGA <- function(dataset,genes,quantile_used,percentage_patie
     id_used_3 <- which(rownames(dataset) %in% genes$Group1)
   }
   if (length(id_used_3) == 0){
-    patients_assignment_vector <- rep(1,ncol(dataset))
+    patients_assignment_vector <- rep(0,ncol(dataset))
     print(paste0("Gene(s) not found: ", genes$Group1))
     return(patients_assignment_vector)
   } else {
@@ -43,7 +43,7 @@ prepareSurvivalDataTCGA <- function(dataset,genes,quantile_used,percentage_patie
       if (length(which(q_comp == 1))/nrow(CL3_z) > percentage_patients){
         patients_assignment_vector[i] = 1
       } else {
-        patients_assignment_vector[i] = 2
+        patients_assignment_vector[i] = 0
       }
     }
     return(patients_assignment_vector)
