@@ -28,9 +28,9 @@ plotLookForPaper <- function(p,y_text,x_text,rotate_check=FALSE,legend_check=TRU
                  aspect.ratio = 0.9, axis.text = element_text(colour = 1, size = 12),
                  legend.background = element_blank(),
                  legend.box.background = element_rect(colour = "black"),
-                 axis.title.y = element_text(size=16, face = "bold", colour = "black",
+                 axis.title.y = element_text(size=20, face = "bold", colour = "black",
                                              margin = margin(t = 0, r = 15, b = 0, l = 0)),
-                 axis.title.x = element_text(size=16, face = "bold", colour = "black",
+                 axis.title.x = element_text(size=20, face = "bold", colour = "black",
                                              margin = margin(t = 15, r = 0, b = 15, l = 0)),
                  axis.text.y  = element_text(size=14, face = "bold", colour = "black"),
                  axis.line = element_line(colour ="black", size = 1),
@@ -41,10 +41,10 @@ plotLookForPaper <- function(p,y_text,x_text,rotate_check=FALSE,legend_check=TRU
   p <- p + ylab(y_text) + xlab(x_text)
   if(rotate_check==TRUE)
   {
-    p <- p + theme(axis.text.x  = element_text(size=14, face = "bold", colour = "black",angle=45, hjust=1))
+    p <- p + theme(axis.text.x  = element_text(size=20, face = "bold", colour = "black",angle=45, hjust=1))
     }
   else {
-    p <- p + theme(axis.text.x  = element_text(size=14, face = "bold", colour = "black"))
+    p <- p + theme(axis.text.x  = element_text(size=20, face = "bold", colour = "black"))
     }
   if(legend_check==FALSE)
   {
