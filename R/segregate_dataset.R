@@ -1,4 +1,4 @@
-#' # A function for extracting the top/bottom n% of a gene expression matrix based on the expression of 'list_of_genes'
+#' # A function for extracting the top/bottom n percentage of a gene expression matrix based on the expression of 'list_of_genes'
 #'
 #' @param dataset,genes,nth_percentage,cor_data2,type_of_effect,hazard_or_pval,print_plot
 #' @keywords data_processing

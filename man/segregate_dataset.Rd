@@ -2,13 +2,13 @@
 % Please edit documentation in R/segregate_dataset.R
 \name{segregate_dataset}
 \alias{segregate_dataset}
-\title{# A function for extracting the top/bottom n% of a gene expression matrix based on the expression of 'list_of_genes'}
+\title{# A function for extracting the top/bottom n percentage of a gene expression matrix based on the expression of 'list_of_genes'}
 \usage{
 segregate_dataset(dataset, genes, nth_percentage, cor_data2,
   type_of_effect, hazard_or_pval, print_plot = TRUE)
 }
 \description{
-# A function for extracting the top/bottom n% of a gene expression matrix based on the expression of 'list_of_genes'
+# A function for extracting the top/bottom n percentage of a gene expression matrix based on the expression of 'list_of_genes'
 }
 \examples{
 segregate_dataset()
