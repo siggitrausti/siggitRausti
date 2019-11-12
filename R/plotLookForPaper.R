@@ -37,7 +37,8 @@ plotLookForPaper <- function(p,y_text,x_text,rotate_check=FALSE,legend_check=TRU
                  axis.ticks = element_line(colour ="black", size = 1),
                  legend.text  = element_text(size =14),
                  panel.grid.major = element_blank(),
-                 panel.grid.minor = element_blank())
+                 panel.grid.minor = element_blank(),
+                 plot.margin = unit(c(1,1,1,1), "cm"))
   p <- p + ylab(y_text) + xlab(x_text)
   if(rotate_check==TRUE)
   {
