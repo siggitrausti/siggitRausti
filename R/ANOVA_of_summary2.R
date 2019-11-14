@@ -23,7 +23,11 @@ ANOVA_of_summary2 <- function(groups,means,stds,var.equal=T){
   colnames(mdata)[2] <- 'Replicates'
   if(var.equal == T){
     res.aov <- aov(value ~ Groups, data = mdata)
-    outp <- TukeyHSD(res.aov)
+    if(summary(res.aov)[[1]][["Pr(>F)"]][1] >= 0.05){
+      print('No significance observed in ANOVA. Tukey test not appropriate...')
+    } else {
+      outp <- TukeyHSD(res.aov)
+    }
   } else {
     print('Dont use ANOVA for non-parametric data! Use Kruskal-Wallis...')
   }
