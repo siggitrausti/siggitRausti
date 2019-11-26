@@ -4,7 +4,8 @@
 \alias{boxMets}
 \title{Create beautiful boxplots from data.}
 \usage{
-boxMets(dataset, id_mets, x_variable, fill_variable, common_legend = T)
+boxMets(dataset, id_mets, x_variable, fill_variable, common_legend = T,
+  stat_test = F, ref_group)
 }
 \description{
 Create beautiful boxplots from data.
