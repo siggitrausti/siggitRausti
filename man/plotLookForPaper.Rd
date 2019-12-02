@@ -4,8 +4,7 @@
 \alias{plotLookForPaper}
 \title{Making plots look good}
 \usage{
-plotLookForPaper(p, y_text, x_text, rotate_check = FALSE,
-  legend_check = TRUE)
+plotLookForPaper(p, y_text, x_text, rotate_check = FALSE, legend_check = TRUE)
 }
 \description{
 Making plots look good

@@ -4,8 +4,7 @@
 \alias{t.test2}
 \title{A function to perform a two-sample t-test based on summary, not replicate values.}
 \usage{
-\method{t}{test2}(m1, m2, s1, s2, n1, n2, m0 = 0,
-  equal.variance = FALSE)
+\method{t}{test2}(m1, m2, s1, s2, n1, n2, m0 = 0, equal.variance = FALSE)
 }
 \description{
 A function to perform a two-sample t-test based on summary, not replicate values.

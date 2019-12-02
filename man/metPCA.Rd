@@ -4,8 +4,26 @@
 \alias{metPCA}
 \title{PCA plotting of data:}
 \usage{
-metPCA(dataset, groups, scale, pcs, center, log, power, colors, CI, label,
-  corplot, minvalue, narm, scree, nh, pointsize, corrList, loadinglist)
+metPCA(
+  dataset,
+  groups,
+  scale,
+  pcs,
+  center,
+  log,
+  power,
+  colors,
+  CI,
+  label,
+  corplot,
+  minvalue,
+  narm,
+  scree,
+  nh,
+  pointsize,
+  corrList,
+  loadinglist
+)
 }
 \description{
 metPCA from Freyr Johannson.
