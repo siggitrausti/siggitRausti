@@ -51,9 +51,9 @@ boxMets <- function(dataset,id_mets,x_variable,fill_variable,common_legend=T,sta
                        axis.text.y = element_text(face="bold", color="grey10", 
                                                   size=10),
                        axis.title.x = element_text(face="bold", color="grey10", 
-                                                   size=14),
+                                                   size=18),
                        axis.title.y = element_text(face="bold", color="grey10", 
-                                                   size=14))
+                                                   size=18))
       p1 <- p1 + theme(panel.grid.major.y = element_line(color='grey'))
       plot_list[[i]] <- p1
     } else {
@@ -68,9 +68,9 @@ boxMets <- function(dataset,id_mets,x_variable,fill_variable,common_legend=T,sta
                        axis.text.y = element_text(face="bold", color="grey10", 
                                                   size=10),
                        axis.title.x = element_text(face="bold", color="black", 
-                                                   size=14),
+                                                   size=18),
                        axis.title.y = element_text(face="bold", color="black", 
-                                                   size=14))
+                                                   size=18))
       p1 <- p1 + theme(panel.grid.major.y = element_line(color='grey'))
       plot_list[[i]] <- p1
     }
