@@ -47,9 +47,9 @@ boxMets <- function(dataset,id_mets,x_variable,fill_variable,common_legend=T,sta
       p1 <- plotLookForPaper(p1,y_title,'',rotate_check=T,legend_check = F)
       p1 <- p1 + ggtitle(paste(colnames(dataset)[id_mets[i]]))
       p1 <- p1 + theme(axis.text.x = element_text(face="bold", color="grey10", 
-                                                  size=14),
+                                                  size=16),
                        axis.text.y = element_text(face="bold", color="grey10", 
-                                                  size=10),
+                                                  size=12),
                        axis.title.x = element_text(face="bold", color="grey10", 
                                                    size=18),
                        axis.title.y = element_text(face="bold", color="grey10", 
