@@ -40,7 +40,7 @@ boxMets <- function(dataset,id_mets,x_variable,fill_variable,common_legend=T,sta
     if (stat_test == T){
       my_ref_group <- ref_group
       p1 <- ggboxplot(dataset, x = x_variable, y = paste0("`", colnames(dataset)[id_mets[i]], "`"),
-                      fill = fill_variable, palette = ColBrew('JCO'),
+                      fill = fill_variable, palette = ColBrew('Futurama'),
                       ylab = "Metabolite", xlab = "Treatment",
                       width = 0.7,size=0.9) + 
         stat_compare_means(size=10,label='p.signif',hide.ns = T,ref.group = my_ref_group)
@@ -58,7 +58,7 @@ boxMets <- function(dataset,id_mets,x_variable,fill_variable,common_legend=T,sta
       plot_list[[i]] <- p1
     } else {
       p1 <- ggboxplot(dataset, x = x_variable, y = paste0("`", colnames(dataset)[id_mets[i]], "`"),
-                      fill = fill_variable, palette = ColBrew('JCO'),
+                      fill = fill_variable, palette = ColBrew('Futurama'),
                       ylab = "Metabolite", xlab = "Treatment",
                       width = 0.7,size=0.9)
       p1 <- plotLookForPaper(p1,y_title,'',rotate_check=T,legend_check = F)

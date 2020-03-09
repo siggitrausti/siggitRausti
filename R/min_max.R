@@ -15,7 +15,7 @@ min_max <- function(x,a,b) {
   {
     b = 1
   }
-  mm <- (x - min(x)) / (max(x) - min(x))
+  mm <- (x - min(x,na.rm=T)) / (max(x,na.rm=T) - min(x,na.rm=T))
   val <- (b-a)*(mm)+a
   return (val)
 }
