@@ -4,10 +4,10 @@
 #' @keywords plots
 #' @export
 #' @examples
-#' plotLookForPaper()
+#' plot_look_for_paper()
 
 
-plotLookForPaper <- function(p,y_text,x_text,rotate_check=FALSE,legend_check=TRUE){
+plot_look_for_paper <- function(p,y_text,x_text,rotate_check=FALSE,legend_check=TRUE){
   if (missing(rotate_check))
   {
     rotate_check <- FALSE

@@ -4,9 +4,9 @@
 #' @keywords Cells
 #' @export
 #' @examples
-#' calculateCellGrowth()
+#' calculate_cell_growth()
 
-calculateCellGrowth <- function(cell_no,timepoints){
+calculate_cell_growth <- function(cell_no,timepoints){
   # This function is to calculate growth rate from cell numbers and hours
   if(length(cell_no) != length(timepoints)){
     print('No of cells and timepoints dont match, try again stupid...')

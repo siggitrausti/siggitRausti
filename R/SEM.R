@@ -4,6 +4,6 @@
 #' @keywords data_analysis
 #' @export
 #' @examples
-#' SEM()
+#' sem()
 
-SEM <- function(x) sd(x)/sqrt(length(x))
+sem <- function(x) sd(x)/sqrt(length(x))

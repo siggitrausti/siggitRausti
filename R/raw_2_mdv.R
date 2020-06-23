@@ -4,9 +4,9 @@
 #' @keywords data_processing
 #' @export
 #' @examples
-#' Raw2MDV()
+#' raw_2_mdv()
 
-Raw2MDV <- function(iso_vector,tol_value){
+raw_2_mdv <- function(iso_vector,tol_value){
   if (missing(tol_value))
   {
     tol_value <- 0.0001

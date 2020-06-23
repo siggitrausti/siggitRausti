@@ -4,9 +4,9 @@
 #' @keywords data_processing
 #' @export
 #' @examples
-#' boxMets()
+#' box_mets()
 
-boxMets <- function(dataset,id_mets,x_variable,fill_variable,common_legend=T,stat_test=F,ref_group,y_title){
+box_mets <- function(dataset,id_mets,x_variable,fill_variable,common_legend=T,stat_test=F,ref_group,y_title){
   # SINCE I HAVE NOT ADDED THE 'PLOT_METABOLITES' FUNCTION TO SIGGITRAUSTI PACKAGE, THIS SHORTCUT WILL HAVE TO DO..
   Packages <- c("ggpubr", "gplots","cowplot","gridExtra","siggitRausti")
   lapply(Packages, require, character.only = TRUE)
@@ -40,16 +40,16 @@ boxMets <- function(dataset,id_mets,x_variable,fill_variable,common_legend=T,sta
     if (stat_test == T){
       my_ref_group <- ref_group
       p1 <- ggboxplot(dataset, x = x_variable, y = paste0("`", colnames(dataset)[id_mets[i]], "`"),
-                      fill = fill_variable, palette = ColBrew('Futurama'),
+                      fill = fill_variable, palette = ColBrew('MetaboA'),
                       ylab = "Metabolite", xlab = "Treatment",
                       width = 0.7,size=0.9) + 
         stat_compare_means(size=10,label='p.signif',hide.ns = T,ref.group = my_ref_group)
       p1 <- plotLookForPaper(p1,y_title,'',rotate_check=T,legend_check = F)
       p1 <- p1 + ggtitle(paste(colnames(dataset)[id_mets[i]]))
       p1 <- p1 + theme(axis.text.x = element_text(face="bold", color="grey10", 
-                                                  size=16),
+                                                  size=18),
                        axis.text.y = element_text(face="bold", color="grey10", 
-                                                  size=12),
+                                                  size=14),
                        axis.title.x = element_text(face="bold", color="grey10", 
                                                    size=18),
                        axis.title.y = element_text(face="bold", color="grey10", 
@@ -58,7 +58,7 @@ boxMets <- function(dataset,id_mets,x_variable,fill_variable,common_legend=T,sta
       plot_list[[i]] <- p1
     } else {
       p1 <- ggboxplot(dataset, x = x_variable, y = paste0("`", colnames(dataset)[id_mets[i]], "`"),
-                      fill = fill_variable, palette = ColBrew('Futurama'),
+                      fill = fill_variable, palette = ColBrew('Klimt'),
                       ylab = "Metabolite", xlab = "Treatment",
                       width = 0.7,size=0.9)
       p1 <- plotLookForPaper(p1,y_title,'',rotate_check=T,legend_check = F)
@@ -68,9 +68,9 @@ boxMets <- function(dataset,id_mets,x_variable,fill_variable,common_legend=T,sta
                        axis.text.y = element_text(face="bold", color="grey10", 
                                                   size=10),
                        axis.title.x = element_text(face="bold", color="black", 
-                                                   size=18),
+                                                   size=14),
                        axis.title.y = element_text(face="bold", color="black", 
-                                                   size=18))
+                                                   size=14))
       p1 <- p1 + theme(panel.grid.major.y = element_line(color='grey'))
       plot_list[[i]] <- p1
     }

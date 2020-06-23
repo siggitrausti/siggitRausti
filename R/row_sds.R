@@ -4,9 +4,9 @@
 #' @keywords data_processing
 #' @export
 #' @examples
-#' rowSDs()
+#' row_sds()
 
-rowSDs <- function(dataset){
+row_sds <- function(dataset){
   # A function to find the SDs of rows within a dataset/dataframe/matrix
   outp <- rep(NA,nrow(dataset))
   for (i in 1:nrow(dataset)){

@@ -4,9 +4,9 @@
 #' @keywords data_processing
 #' @export
 #' @examples
-#' removeLowVariance()
+#' remove_low_variance()
 
-removeLowVariance <- function(dataset,threshold,rows_or_cols){
+remove_low_variance <- function(dataset,threshold,rows_or_cols){
   if (missing(threshold))
   {
     threshold <- 0.1
