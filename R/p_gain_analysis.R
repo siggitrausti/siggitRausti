@@ -126,7 +126,7 @@ p_gain_analysis <- function(dataset,covariates,start,p_thresh){
       #print(data_pgain)
       pgain_image = ggplot(data_pgain,aes(x=Sequence2,y=Gain,label = NAME)) + geom_point() + 
         geom_text(aes(label=ifelse(Gain>(1/(2*p_thresh)),as.character(NAME),'')),size = 6,position = position_nudge(y = -0.05*max(p_gain,na.rm=T),x=-0.2*length(p_gain)))
-      pgain_image <- plotLookForPaper(pgain_image,'Gain value','') + geom_hline(yintercept=1/(2*p_thresh), linetype="dashed", color = "red") + 
+      pgain_image <- plot_look_for_paper(pgain_image,'Gain value','') + geom_hline(yintercept=1/(2*p_thresh), linetype="dashed", color = "red") + 
         xlim(0,max(data_pgain$Sequence2,na.rm=T)+1)
       grid.arrange(pgain_image, ROC_single, ROC_ratio, ncol=2, nrow =2)
     } else {
@@ -236,7 +236,7 @@ p_gain_analysis <- function(dataset,covariates,start,p_thresh){
       #print(data_pgain)
       pgain_image = ggplot(data_pgain,aes(x=Sequence2,y=Gain,label = NAME)) + geom_point() + 
         geom_text(aes(label=ifelse(Gain>(1/(2*p_thresh)),as.character(NAME),'')),size = 6,position = position_nudge(y = -0.05*max(p_gain,na.rm=T),x=-0.2*length(p_gain)))
-      pgain_image <- plotLookForPaper(pgain_image,'Gain value','') + geom_hline(yintercept=1/(2*p_thresh), linetype="dashed", color = "red") + 
+      pgain_image <- plot_look_for_paper(pgain_image,'Gain value','') + geom_hline(yintercept=1/(2*p_thresh), linetype="dashed", color = "red") + 
         xlim(0,max(data_pgain$Sequence2,na.rm=T)+1)
       grid.arrange(pgain_image, ncol=1, nrow =1)
     } else {
