@@ -44,7 +44,7 @@ box_mets <- function(dataset,id_mets,x_variable,fill_variable,common_legend=T,st
                       ylab = "Metabolite", xlab = "Treatment",
                       width = 0.7,size=0.9) + 
         stat_compare_means(size=10,label='p.signif',hide.ns = T,ref.group = my_ref_group)
-      p1 <- plotLookForPaper(p1,y_title,'',rotate_check=T,legend_check = F)
+      p1 <- plot_look_for_paper(p1,y_title,'',rotate_check=T,legend_check = F)
       p1 <- p1 + ggtitle(paste(colnames(dataset)[id_mets[i]]))
       p1 <- p1 + theme(axis.text.x = element_text(face="bold", color="grey10", 
                                                   size=18),
@@ -61,7 +61,7 @@ box_mets <- function(dataset,id_mets,x_variable,fill_variable,common_legend=T,st
                       fill = fill_variable, palette = ColBrew('Klimt'),
                       ylab = "Metabolite", xlab = "Treatment",
                       width = 0.7,size=0.9)
-      p1 <- plotLookForPaper(p1,y_title,'',rotate_check=T,legend_check = F)
+      p1 <- plot_look_for_paper(p1,y_title,'',rotate_check=T,legend_check = F)
       p1 <- p1 + ggtitle(paste(colnames(dataset)[id_mets[i]]))
       p1 <- p1 + theme(axis.text.x = element_text(face="bold", color="grey10", 
                                                   size=10),
