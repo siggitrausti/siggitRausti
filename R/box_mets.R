@@ -39,7 +39,7 @@ box_mets <- function(dataset,id_mets,x_variable,fill_variable,common_legend=T,st
   for (i in 1:length(id_mets)){
     if (stat_test == T){
       my_ref_group <- ref_group
-      p1 <- ggboxplot(dataset, x = x_variable, y = paste0("`", colnames(dataset)[id_mets[i]], "`"),
+      p1 <- ggboxplot(dataset, x = x_variable, y = colnames(dataset)[id_mets[i]],
                       fill = fill_variable, palette = ColBrew('MetaboA'),
                       ylab = "Metabolite", xlab = "Treatment",
                       width = 0.7,size=0.9) + 
@@ -57,7 +57,7 @@ box_mets <- function(dataset,id_mets,x_variable,fill_variable,common_legend=T,st
       p1 <- p1 + theme(panel.grid.major.y = element_line(color='grey'))
       plot_list[[i]] <- p1
     } else {
-      p1 <- ggboxplot(dataset, x = x_variable, y = paste0("`", colnames(dataset)[id_mets[i]], "`"),
+      p1 <- ggboxplot(dataset, x = x_variable, y = colnames(dataset)[id_mets[i]],
                       fill = fill_variable, palette = ColBrew('Klimt'),
                       ylab = "Metabolite", xlab = "Treatment",
                       width = 0.7,size=0.9)
